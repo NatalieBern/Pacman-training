@@ -1,0 +1,74 @@
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]serSettings/
+[Mm]emoryCaptures/
+[Bb]ehaviourTrees/
+
+# Build artifacts
+*.apk
+*.aab
+*.unitypackage
+*.app
+*.exe
+*.dll
+*.so
+*.dylib
+*.bundle
+*.ipa
+*.msi
+*.zip
+
+# Crash reports
+sysinfo.txt
+
+# Rider / VS / VSCode
+.vs/
+.idea/
+.vscode/
+*.sln
+*.csproj
+*.unityproj
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# Auto-generated debug files
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Cache
+/[Aa]rtifacts/
+# Unity 2021+ cache folders
+/[Ss]treamingAssets/aa.meta
+/[Ss]treamingAssets/aa/
+
+# Addressables
+/[Aa]ddressableAssetsData/*/addressables_content_state.bin
+/[Aa]ddressableAssetsData/*/AssetBundleBuildLogs/
+
+# JetBrains Rider
+*.DotSettings.user
+
+# Other
+*.swp
+*.tmp
+*.bak
+*.orig
+*.old
+
+# OS generated
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Unity Cloud Build
+[Uu]serSettings/UnityConnectSettings.asset
