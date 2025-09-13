@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F8EDD3CE-FD28-1F24-FC64-4A04F2AD1B57}</ProjectGuid>
+    <ProjectGuid>{C58B719F-BE60-5ED0-9F93-28067A58BC47}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -67,6 +67,7 @@
     <Compile Include="Assets/Scripts/Pacman.cs" />
     <Compile Include="Assets/Scripts/AnimatedSprite.cs" />
     <Compile Include="Assets/Scripts/Ghost.cs" />
+    <Compile Include="Assets/Scripts/Level_1.cs" />
     <Compile Include="Assets/Scripts/Movement.cs" />
     <Compile Include="Assets/Scripts/LevelManager.cs" />
     <Compile Include="Assets/Scripts/GameManager.cs" />
