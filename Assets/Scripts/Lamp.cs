@@ -11,9 +11,12 @@ public class Lamp : MonoBehaviour
 
     private Image ImageBase;
 
+    public GameObject PlayerOb;
+
     void Start()
     {
         ImageBase = GetComponent<Image>();
+        PlayerOb.SetActive(false);
         Level_0();
 
     }
@@ -27,9 +30,19 @@ public class Lamp : MonoBehaviour
 
     void Level_0()
     {
-        Invoke("ChangePink", 2f);
-        Invoke("ChangeBlue", 4f);
-        Invoke("ChangeGreen", 6f);
+        Invoke("ChangePink", 1f);
+        Invoke("ChangeBlue", 1.5f);
+        Invoke("ChangeGreen", 2f);
+        Invoke("ChangeDelault",2.5f);
+        Invoke("SpawnPlayer", 3f);
+        
+
+
+
+    }
+    void SpawnPlayer()
+    {
+        PlayerOb.SetActive(true);
     }
     void ChangePink()
     {

@@ -61,12 +61,14 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/6000.0.34f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/PlayerController.cs" />
     <Compile Include="Assets/Scripts/Puzzle.cs" />
     <Compile Include="Assets/Scripts/Lamp.cs" />
     <Compile Include="Assets/Scripts/Pacman.cs" />
     <Compile Include="Assets/Scripts/AnimatedSprite.cs" />
     <Compile Include="Assets/Scripts/Ghost.cs" />
     <Compile Include="Assets/Scripts/Movement.cs" />
+    <Compile Include="Assets/Scripts/LevelManager.cs" />
     <Compile Include="Assets/Scripts/GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
