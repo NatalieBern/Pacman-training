@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kris_0000_Agata_left_3_0: -4539924589983511228
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
