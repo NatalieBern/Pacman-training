@@ -34,7 +34,7 @@ public class Lamp : MonoBehaviour
         Invoke("ChangeBlue", 1.5f);
         Invoke("ChangeGreen", 2f);
         Invoke("ChangeDelault",2.5f);
-        Invoke("SpawnPlayer", 3f);
+        Invoke("SpawnPlayer", 0.5f);
         
 
 
