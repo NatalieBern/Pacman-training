@@ -2,116 +2,74 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    //1 - розовый
-    //2 - желтый
-    //3 - зеленый
-    //4 - голубой
-
-    int[] LevelTest = { 1, 4, 3 };
-    int[] OrderPlayer = { 0, 0, 0 };
+    protected int[] OrderLevel;      // последовательность правильных точек
+    protected int[] OrderPlayer;    // выбор игрока
 
     public AudioSource RightSoundSour;
     public AudioSource MistakeSoundSour;
 
-    private int Number;
-    void Start()
+    protected int Number;
+
+    protected virtual void Start()
     {
         Number = 1;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        OrderPlayer = new int[OrderLevel.Length]; // создаём массив под уровень
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        int value = 0;
+
         switch (collision.gameObject.tag)
         {
-            case "PinkPoint":
-                OrderPlayer[Number - 1] = 1;
-                Debug.Log("Розовая точка");
-                if (OrderPlayer[Number - 1] == LevelTest[Number - 1])
-                {
-                    Debug.Log("Правильная точка");
-                    RightSoundSour.Play();
-
-                }
-                else
-                {
-                    Debug.Log("Неправильная точка");
-                    Lose();
-                }
-                break;
-
-            case "YellowPoint":
-                OrderPlayer[Number - 1] = 2;
-                Debug.Log("Желтая точка");
-                if (OrderPlayer[Number - 1] == LevelTest[Number - 1])
-                {
-                    Debug.Log("Правильная точка");
-                    RightSoundSour.Play();
-                }
-                else
-                {
-                    Debug.Log("Неправильная точка");
-                    Lose();
-                }
-                break;
-
-            case "GreenPoint":
-                OrderPlayer[Number - 1] = 3;
-                Debug.Log("Зеленая точка");
-                if (OrderPlayer[Number - 1] == LevelTest[Number - 1])
-                {
-                    Debug.Log("Правильная точка");
-                    RightSoundSour.Play();
-                }
-                else
-                {
-                    Debug.Log("Неправильная точка");
-                    Lose();
-                }
-                break;
-
-            case "BluePoint":
-                OrderPlayer[Number - 1] = 4;
-                Debug.Log("Голубая");
-                if (OrderPlayer[Number - 1] == LevelTest[Number - 1])
-                {
-                    Debug.Log("Правильная точка");
-                    RightSoundSour.Play();
-                }
-                else
-                {
-                    Debug.Log("Неправильная точка");
-                    Lose();
-                }
-                break;
+            case "PinkPoint":   value = 1; Debug.Log("Розовая точка"); break;
+            case "YellowPoint": value = 2; Debug.Log("Желтая точка"); break;
+            case "GreenPoint":  value = 3; Debug.Log("Зеленая точка"); break;
+            case "BluePoint":   value = 4; Debug.Log("Голубая точка"); break;
         }
-        if (Number == LevelTest.Length)
+
+        if (value != 0)
         {
-            if (CheckWin())
-                Win();
-        }
+            OrderPlayer[Number - 1] = value;
 
-        Number += 1;
-     
+            if (OrderPlayer[Number - 1] == OrderLevel[Number - 1])
+            {
+                Debug.Log("Правильная точка");
+                RightSoundSour.Play();
+            }
+            else
+            {
+                Debug.Log("Неправильная точка");
+                Lose();
+                return;
+            }
+
+            if (Number == OrderLevel.Length)
+            {
+                if (CheckWin())
+                    Win();
+            }
+
+            Number++;
+        }
     }
-    bool CheckWin()
+
+    protected bool CheckWin()
     {
-        for (int i = 0; i < LevelTest.Length; i++)
+        for (int i = 0; i < OrderLevel.Length; i++)
         {
-            if (OrderPlayer[i] != LevelTest[i])
+            if (OrderPlayer[i] != OrderLevel[i])
                 return false;
         }
         return true;
     }
-    void Win()
+
+    protected virtual void Win()
     {
         Debug.Log("Победа");
     }
-    void Lose()
+
+    protected virtual void Lose()
     {
         MistakeSoundSour.Play();
         Debug.Log("Проигрыш");
