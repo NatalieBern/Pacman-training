@@ -68,6 +68,7 @@
     <Compile Include="Assets/Scripts/AnimatedSprite.cs" />
     <Compile Include="Assets/Scripts/Point.cs" />
     <Compile Include="Assets/Scripts/Ghost.cs" />
+    <Compile Include="Assets/Scripts/Level_3.cs" />
     <Compile Include="Assets/Scripts/Level_1.cs" />
     <Compile Include="Assets/Scripts/Movement.cs" />
     <Compile Include="Assets/Scripts/LevelManager.cs" />
