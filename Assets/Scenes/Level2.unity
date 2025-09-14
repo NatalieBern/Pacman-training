@@ -444,8 +444,8 @@ Camera:
   m_GameObject: {fileID: 1378283900}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.18039216, g: 0.18039216, b: 0.18039216, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -553,6 +553,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2800573228735058955, guid: 788565eca036148f4b7f91e7f54b731b, type: 3}
+      propertyPath: PlayerSpeed_
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3407842231559472016, guid: 788565eca036148f4b7f91e7f54b731b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.99
@@ -624,11 +628,27 @@ PrefabInstance:
       objectReference: {fileID: 1964362012}
     - target: {fileID: 1839689547633263151, guid: a351e3a44a38a4b32a491db1cd8a296e, type: 3}
       propertyPath: NumberLevel
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4175483385111516530, guid: a351e3a44a38a4b32a491db1cd8a296e, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204974195422296588, guid: a351e3a44a38a4b32a491db1cd8a296e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 25186253}
+    - target: {fileID: 6204974195422296588, guid: a351e3a44a38a4b32a491db1cd8a296e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartLevel3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204974195422296588, guid: a351e3a44a38a4b32a491db1cd8a296e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Puzzle, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204974195422296588, guid: a351e3a44a38a4b32a491db1cd8a296e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7488813141392009704, guid: a351e3a44a38a4b32a491db1cd8a296e, type: 3}
       propertyPath: m_Pivot.x
@@ -812,7 +832,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1378283903}
-  - {fileID: 624805921}
   - {fileID: 1622856363}
+  - {fileID: 624805921}
   - {fileID: 823217632}
   - {fileID: 1623615472}

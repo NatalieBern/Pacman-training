@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour
     public AudioSource RightSoundSour;
     public AudioSource MistakeSoundSour;
 
-    protected int Number;
+    protected int Number; //номер элемента в массивах
 
     public Puzzle puzzle;
 

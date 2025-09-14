@@ -12,7 +12,7 @@ public class Lamp : MonoBehaviour
     private Image ImageBase;
 
     public GameObject PlayerOb;
-    [SerializeField] private int NumberLevel;
+    [SerializeField] private int NumberLevel; //нужен для начала запуска правильного уровня
 
     void Start()
     {
@@ -20,13 +20,24 @@ public class Lamp : MonoBehaviour
         PlayerOb.SetActive(false);
         switch(NumberLevel)
         {
-            case 0:
+            case 1:
                 Level_1();
                 break;
-            case 1:
+            case 2:
                 Level_2();
                 break;
-            
+            case 3:
+                Level_3();
+                break;
+            case 4: 
+                Level_4();  
+                break;  
+            case 5:
+                Level_5();
+                break;
+            case 6:
+                Level_6();  
+                break;
         }
 
     }
@@ -62,6 +73,51 @@ public class Lamp : MonoBehaviour
         Invoke("SpawnPlayer", 1.5f);
 
     }
+
+    void Level_3()
+    {
+        Invoke("ChangePink", 0.5f);
+        Invoke("ChangeGreen", 1f);
+        Invoke("ChangeYellow", 1.5f);
+        Invoke("ChangeDelault", 2f);
+        Invoke("SpawnPlayer", 2f);
+
+    }
+    void Level_4()
+    {
+        Invoke("ChangePink", 0.5f);
+        Invoke("ChangeGreen", 1f);
+        Invoke("ChangeYellow", 1.5f);
+        Invoke("ChangeGreen", 2f);
+        Invoke("ChangeDelault", 2.5f);
+        Invoke("SpawnPlayer", 2.5f);
+
+    }
+    void Level_5()
+    {
+        Invoke("ChangePink", 0.5f);
+        Invoke("ChangeGreen", 1f);
+        Invoke("ChangeYellow", 1.5f);
+        Invoke("ChangeGreen", 2f);
+        Invoke("ChangeBlue", 2.5f);
+        Invoke("ChangeDelault", 3f);
+        Invoke("SpawnPlayer", 3f);
+
+    }
+
+    void Level_6()
+    {
+        Invoke("ChangePink", 0.5f);
+        Invoke("ChangeGreen", 1f);
+        Invoke("ChangeYellow", 1.5f);
+        Invoke("ChangeGreen", 2f);
+        Invoke("ChangeBlue", 2.5f);
+        Invoke("ChangePink", 3f);
+        Invoke("ChangeDelault", 3.5f);
+        Invoke("SpawnPlayer", 3.5f);
+
+    }
+
 
     void SpawnPlayer()
     {
