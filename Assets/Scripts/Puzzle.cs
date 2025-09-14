@@ -17,7 +17,7 @@ public class Puzzle : MonoBehaviour
 
     public GameObject ObjPuzzle;
 
-    public int IntLevel = 0;
+    static int IntLevel;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,11 +30,11 @@ public class Puzzle : MonoBehaviour
         Piece_6.SetActive(false);
         Piece_7.SetActive(false);
         Piece_8.SetActive(false);
+        Piece_9.SetActive(false);
 
         ButtonNextLevel.SetActive(false);
 
-        Piece_9.SetActive(false);
-
+       
         ObjPuzzle.SetActive(false);
     }
 

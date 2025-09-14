@@ -20,10 +20,10 @@ public class Lamp : MonoBehaviour
         PlayerOb.SetActive(false);
         switch(NumberLevel)
         {
-            case 1:
+            case 0:
                 Level_1();
                 break;
-            case 2:
+            case 1:
                 Level_2();
                 break;
             
@@ -58,6 +58,7 @@ public class Lamp : MonoBehaviour
     {
         Invoke("ChangePink", 0.5f);
         Invoke("ChangeGreen", 1f);
+        Invoke("ChangeDelault", 1.5f);
         Invoke("SpawnPlayer", 1.5f);
 
     }

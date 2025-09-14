@@ -13,7 +13,7 @@ public class Level_2 : LevelManager
     protected override void Win()
     {
         base.Win();
-        Debug.Log("Level 1 Complete!");
+        Debug.Log("Level 2 Complete!");
         // тут можно загрузить Level_2 или показать экран победы
     }
 }
