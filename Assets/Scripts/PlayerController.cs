@@ -32,10 +32,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         moveInput = PlayerMove_.ReadValue<Vector2>();
-        //Vector3 movement = new Vector3(moveInput.x, moveInput.y, 0) * PlayerSpeed_ * Time.deltaTime;
-
-        // Применяем перемещение
-        //PlayerTrans_.Translate(movement);
 
         if(moveInput.x > 0)
         {

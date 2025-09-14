@@ -15,6 +15,8 @@ public class LevelManager : MonoBehaviour
 
     protected int Number;
 
+    public Puzzle puzzle;
+
     protected virtual void Start()
     {
         Number = 1;
@@ -32,7 +34,6 @@ public class LevelManager : MonoBehaviour
             case "GreenPoint":  value = 3; Debug.Log("Зеленая точка"); break;
             case "BluePoint":   value = 4; Debug.Log("Голубая точка"); break;
 
-           
         }
 
         if (value != 0)
@@ -50,7 +51,7 @@ public class LevelManager : MonoBehaviour
                     p.StartAnimRight();
 
                 }
-                //Invoke("Lose", 1.5f);
+  
             }
             else
             {
@@ -90,6 +91,11 @@ public class LevelManager : MonoBehaviour
     protected virtual void Win()
     {
         Debug.Log("Победа");
+        if (puzzle != null)
+        {
+            puzzle.StartOpenPuzzle();
+            Debug.Log("Функция найдена и вызвана");
+        }
     }
 
     protected virtual void Lose()
