@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        // Здесь вместо Translate используем linear velocity
         PlayerRb_.linearVelocity = moveInput * PlayerSpeed_;
     }
 }

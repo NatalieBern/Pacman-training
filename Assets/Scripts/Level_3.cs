@@ -4,30 +4,16 @@ public class Level_3 : LevelManager
 {
     protected override void Start()
     {
-        //последовательность уовня
-        OrderLevel = new int[] { 1, 3, 2 };
+        //РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ СѓРѕРІРЅСЏ
+        OrderLevel = new int[] {  };
 
-        base.Start(); // вызываем базовый Start, чтобы OrderPlayer и Number настроились
+        base.Start(); // РІС‹Р·С‹РІР°РµРј Р±Р°Р·РѕРІС‹Р№ Start, С‡С‚РѕР±С‹ OrderPlayer Рё Number РЅР°СЃС‚СЂРѕРёР»РёСЃСЊ
     }
 
     protected override void Win()
     {
         base.Win();
-        Debug.Log("Level 3 Complete!");
-        // тут можно загрузить Level_2 или показать экран победы
+        Debug.Log("Level 2 Complete!");
+        // С‚СѓС‚ РјРѕР¶РЅРѕ Р·Р°РіСЂСѓР·РёС‚СЊ Level_2 РёР»Рё РїРѕРєР°Р·Р°С‚СЊ СЌРєСЂР°РЅ РїРѕР±РµРґС‹
     }
 }
-
-// 1,3,2,3,4,1
-
-//Pink
-//Green
-//Yellow
-//Green
-//Blue
-//Pink
-
-    //1 - розовая точка
-    //2 - желтая точка
-    //3 - зеленая точка
-    //4 - голубая точка

@@ -17,7 +17,7 @@ public class Puzzle : MonoBehaviour
 
     public GameObject ObjPuzzle;
 
-    static int IntLevel; //уровень в пазле
+    static int IntLevel;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,7 +36,6 @@ public class Puzzle : MonoBehaviour
 
        
         ObjPuzzle.SetActive(false);
-
     }
 
     // Update is called once per frame
@@ -48,25 +47,15 @@ public class Puzzle : MonoBehaviour
                 Piece_1.SetActive(true);
                 break;
             case 2:
-                Piece_1.SetActive(true);
                 Piece_2.SetActive(true);
                 break;
             case 3:
-                Piece_1.SetActive(true);
-                Piece_2.SetActive(true);
                 Piece_3.SetActive(true);
                 break;
             case 4:
-                Piece_1.SetActive(true);
-                Piece_2.SetActive(true);
-                Piece_3.SetActive(true);
                 Piece_4.SetActive(true);
                 break;
             case 5:
-                Piece_1.SetActive(true);
-                Piece_2.SetActive(true);
-                Piece_3.SetActive(true);
-                Piece_4.SetActive(true);
                 Piece_5.SetActive(true);
                 break;
             case 6:
@@ -116,21 +105,5 @@ public class Puzzle : MonoBehaviour
     {
         Debug.Log("переход уровня");
         SceneManager.LoadScene("Level3");
-    }
-
-    public void StartLevel4()
-    {
-        Debug.Log("переход уровня");
-        SceneManager.LoadScene("Level4");
-    }
-    public void StartLevel5()
-    {
-        Debug.Log("переход уровня");
-        SceneManager.LoadScene("Level5");
-    }
-    public void StartLevel6()
-    {
-        Debug.Log("переход уровня");
-        SceneManager.LoadScene("Level6");
     }
 }
