@@ -54,4 +54,5 @@ public class PlayerController : MonoBehaviour
             PlayerAnim_.SetBool("isUp", false);
         }
     }
+
 }
