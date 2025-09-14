@@ -26,6 +26,8 @@ public class LevelManager : MonoBehaviour
             case "YellowPoint": value = 2; Debug.Log("Желтая точка"); break;
             case "GreenPoint":  value = 3; Debug.Log("Зеленая точка"); break;
             case "BluePoint":   value = 4; Debug.Log("Голубая точка"); break;
+            case "Coin": Destroy(collision.gameObject); break;
+            default: break;
         }
 
         if (value != 0)
