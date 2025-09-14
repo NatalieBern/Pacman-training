@@ -16,7 +16,9 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         // Показываем только главное меню
-        ShowPanel(mainMenuPanel);
+        mainMenuPanel.SetActive(true);
+        pausePanel.SetActive(false);
+        settingsPanel.SetActive(false);
 
         // Настраиваем слайдер громкости
         if (volumeSlider != null)
@@ -47,6 +49,14 @@ public class MenuManager : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
+    }
+
+    public void ExitToMainMenu()
+    {
+        Time.timeScale = 1f;
+        // Просто скрываем паузу и показываем главное меню
+        pausePanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
     }
 
     // ==================== МЕНЮ ПАУЗЫ ====================
@@ -96,6 +106,41 @@ public class MenuManager : MonoBehaviour
         else
         {
             ShowPanel(mainMenuPanel);
+        }
+    }
+
+    // ==================== ДЛЯ ИГРОВОЙ СЦЕНЫ ====================
+    public void TogglePauseFromGame()
+    {
+        // Проверяем, есть ли панель паузы на этой сцене
+        if (pausePanel != null)
+        {
+            bool isPaused = !pausePanel.activeSelf;
+            pausePanel.SetActive(isPaused);
+            Time.timeScale = isPaused ? 0f : 1f;
+        }
+        else
+        {
+            Debug.Log("Панель паузы не найдена на этой сцене");
+        }
+    }
+
+    // ==================== ПРОВЕРКА НАЛИЧИЯ ПАНЕЛЕЙ ====================
+    private bool HasSettingsPanel()
+    {
+        return settingsPanel != null;
+    }
+
+    public void OpenSettingsFromGame()
+    {
+        if (HasSettingsPanel())
+        {
+            OpenSettingsFromMain(); // Используем существующий метод
+        }
+        else
+        {
+            Debug.Log("Панель настроек не доступна в игровой сцене");
+            // Можно показать сообщение игроку
         }
     }
 
