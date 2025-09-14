@@ -33,7 +33,7 @@ public class MenuManager : MonoBehaviour
     {
         Debug.Log("Игра начинается!");
         // Здесь переход на игровую сцену
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("TestLevel");
     }
 
     public void OpenSettingsFromMain()
@@ -59,8 +59,12 @@ public class MenuManager : MonoBehaviour
 
     public void ResumeGame()
     {
-        HideAllPanels();
-        Time.timeScale = 1f; // Возобновляем время
+        // Скрываем все панели
+        mainMenuPanel.SetActive(false);
+        pausePanel.SetActive(false);
+        settingsPanel.SetActive(false);
+
+        Time.timeScale = 1f;
     }
 
     public void OpenSettingsFromPause()
