@@ -12,12 +12,22 @@ public class Lamp : MonoBehaviour
     private Image ImageBase;
 
     public GameObject PlayerOb;
+    [SerializeField] private int NumberLevel;
 
     void Start()
     {
         ImageBase = GetComponent<Image>();
         PlayerOb.SetActive(false);
-        Level_0();
+        switch(NumberLevel)
+        {
+            case 1:
+                Level_1();
+                break;
+            case 2:
+                Level_2();
+                break;
+            
+        }
 
     }
 
@@ -36,10 +46,22 @@ public class Lamp : MonoBehaviour
         Invoke("ChangeDelault",2.5f);
         Invoke("SpawnPlayer", 0.5f);
         
-
-
+    }
+    void Level_1()
+    {
+        Invoke("ChangePink", 1f);
+        Invoke("ChangeDelault", 2f);
+        Invoke("SpawnPlayer", 3f);
 
     }
+    void Level_2()
+    {
+        Invoke("ChangePink", 0.5f);
+        Invoke("ChangeGreen", 1f);
+        Invoke("SpawnPlayer", 1.5f);
+
+    }
+
     void SpawnPlayer()
     {
         PlayerOb.SetActive(true);

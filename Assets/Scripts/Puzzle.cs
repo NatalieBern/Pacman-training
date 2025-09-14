@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Puzzle : MonoBehaviour
 {
@@ -8,7 +9,11 @@ public class Puzzle : MonoBehaviour
     public GameObject Piece_4;
     public GameObject Piece_5;
     public GameObject Piece_6;
+    public GameObject Piece_7;
+    public GameObject Piece_8;
+    public GameObject Piece_9;
 
+    public GameObject ButtonNextLevel;
 
     public GameObject ObjPuzzle;
 
@@ -23,6 +28,12 @@ public class Puzzle : MonoBehaviour
         Piece_4.SetActive(false);
         Piece_5.SetActive(false);
         Piece_6.SetActive(false);
+        Piece_7.SetActive(false);
+        Piece_8.SetActive(false);
+
+        ButtonNextLevel.SetActive(false);
+
+        Piece_9.SetActive(false);
 
         ObjPuzzle.SetActive(false);
     }
@@ -40,16 +51,24 @@ public class Puzzle : MonoBehaviour
                 break;
             case 3:
                 Piece_3.SetActive(true);
-                Piece_5.SetActive(true);
                 break;
             case 4:
                 Piece_4.SetActive(true);
                 break;
             case 5:
-                
+                Piece_5.SetActive(true);
                 break;
             case 6:
                 Piece_6.SetActive(true);
+                break;
+            case 7:
+                Piece_7.SetActive(true);
+                break;
+            case 8:
+                Piece_8.SetActive(true);
+                break;
+            case 9:
+                Piece_9.SetActive(true);
                 break;
         }
 
@@ -63,8 +82,23 @@ public class Puzzle : MonoBehaviour
     {
         ObjPuzzle.SetActive(false);
     }
-    public void OpenPuzzle()
+    public void StartOpenPuzzle()
+    {
+        Invoke("OpenPuzzle", 1f);
+        Invoke("AddIntLevel", 2f);
+        Invoke("SpawnButton", 2.5f);
+    }
+    void SpawnButton()
+    {
+        ButtonNextLevel.SetActive(true);
+    }
+    void OpenPuzzle()
     {
         ObjPuzzle.SetActive(true);
+    }
+    public void StartLevel2()
+    {
+        Debug.Log("переход уровня");
+        SceneManager.LoadScene("Level2");
     }
 }
