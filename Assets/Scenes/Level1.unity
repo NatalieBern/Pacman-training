@@ -180,11 +180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 310815046016149274, guid: a351e3a44a38a4b32a491db1cd8a296e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -220
+      value: -58
       objectReference: {fileID: 0}
     - target: {fileID: 310815046016149274, guid: a351e3a44a38a4b32a491db1cd8a296e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -268
+      value: -76.042
       objectReference: {fileID: 0}
     - target: {fileID: 438165995860036456, guid: a351e3a44a38a4b32a491db1cd8a296e, type: 3}
       propertyPath: m_Color.b
@@ -208,7 +208,7 @@ PrefabInstance:
       objectReference: {fileID: 4243514104369313707}
     - target: {fileID: 1839689547633263151, guid: a351e3a44a38a4b32a491db1cd8a296e, type: 3}
       propertyPath: NumberLevel
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4175483385111516530, guid: a351e3a44a38a4b32a491db1cd8a296e, type: 3}
       propertyPath: m_Name
