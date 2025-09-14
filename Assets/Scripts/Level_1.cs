@@ -4,7 +4,7 @@ public class Level_1 : LevelManager
 {
     protected override void Start()
     {
-        // здесь мы задаём свою последовательность для первого уровня
+        //последовательность уовня
         OrderLevel = new int[] { 1 };
 
         base.Start(); // вызываем базовый Start, чтобы OrderPlayer и Number настроились

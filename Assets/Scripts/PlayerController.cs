@@ -8,8 +8,12 @@ public class PlayerController : MonoBehaviour
 
     private Transform PlayerTrans_;
     private Animator PlayerAnim_;
+    private Rigidbody2D PlayerRb_;
 
     [SerializeField] private float PlayerSpeed_;
+    private Vector3 PlayerSize_;
+
+    private Vector2 moveInput;
 
     void Start()
     {
@@ -18,26 +22,31 @@ public class PlayerController : MonoBehaviour
         PlayerMove_ = PlayerIn_.actions["Move"];
 
         PlayerAnim_ = GetComponent<Animator>();
+        PlayerSize_ = PlayerTrans_.localScale;
+
+        PlayerRb_ = GetComponent<Rigidbody2D>();
+
+
     }
 
     void Update()
     {
-        Vector2 moveInput = PlayerMove_.ReadValue<Vector2>();
-        Vector3 movement = new Vector3(moveInput.x, moveInput.y, 0) * PlayerSpeed_ * Time.deltaTime;
+        moveInput = PlayerMove_.ReadValue<Vector2>();
+        //Vector3 movement = new Vector3(moveInput.x, moveInput.y, 0) * PlayerSpeed_ * Time.deltaTime;
 
         // Применяем перемещение
-        PlayerTrans_.Translate(movement);
+        //PlayerTrans_.Translate(movement);
 
         if(moveInput.x > 0)
         {
             PlayerAnim_.SetBool("isRightLeft", true);
-            PlayerTrans_.localScale = new Vector3(0.75f, 0.75f, 0.75f);
+            PlayerTrans_.localScale = new Vector3(PlayerSize_.x, PlayerSize_.y, PlayerSize_.z);
 
         }
         else if(moveInput.x < 0) 
         {
             PlayerAnim_.SetBool("isRightLeft", true);
-            PlayerTrans_.localScale = new Vector3(-0.75f, 0.75f,0.75f);
+            PlayerTrans_.localScale = new Vector3(-PlayerSize_.x, PlayerSize_.y, PlayerSize_.z);
         }
         else if (moveInput.y < 0)
         {
@@ -53,5 +62,10 @@ public class PlayerController : MonoBehaviour
             PlayerAnim_.SetBool("isDown", false);
             PlayerAnim_.SetBool("isUp", false);
         }
+    }
+    void FixedUpdate()
+    {
+        // Здесь вместо Translate используем linear velocity
+        PlayerRb_.linearVelocity = moveInput * PlayerSpeed_;
     }
 }

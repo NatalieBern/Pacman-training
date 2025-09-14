@@ -1,9 +1,14 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    //1 - розовая точка
+    //2 - желтая точка
+    //3 - зеленая точка
+    //4 - голубая точка
     protected int[] OrderLevel;      // последовательность правильных точек
-    protected int[] OrderPlayer;    // выбор игрока
+    protected int[] OrderPlayer;    // последовательность созданная игроком
 
     public AudioSource RightSoundSour;
     public AudioSource MistakeSoundSour;
@@ -13,7 +18,7 @@ public class LevelManager : MonoBehaviour
     protected virtual void Start()
     {
         Number = 1;
-        OrderPlayer = new int[OrderLevel.Length]; // создаём массив под уровень
+        OrderPlayer = new int[OrderLevel.Length]; // создаём массив уровня
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,6 +31,8 @@ public class LevelManager : MonoBehaviour
             case "YellowPoint": value = 2; Debug.Log("Желтая точка"); break;
             case "GreenPoint":  value = 3; Debug.Log("Зеленая точка"); break;
             case "BluePoint":   value = 4; Debug.Log("Голубая точка"); break;
+
+           
         }
 
         if (value != 0)
@@ -36,11 +43,27 @@ public class LevelManager : MonoBehaviour
             {
                 Debug.Log("Правильная точка");
                 RightSoundSour.Play();
+
+                Point p = collision.gameObject.GetComponent<Point>();
+                if (p != null)
+                {
+                    p.StartAnimRight();
+
+                }
+                //Invoke("Lose", 1.5f);
             }
             else
             {
+                MistakeSoundSour.Play();
                 Debug.Log("Неправильная точка");
-                Lose();
+
+                Point p = collision.gameObject.GetComponent<Point>();
+                if (p != null)
+                {
+                    p.StartAnimLose();
+
+                }
+                Invoke("Lose", 1.5f);
                 return;
             }
 
@@ -71,7 +94,8 @@ public class LevelManager : MonoBehaviour
 
     protected virtual void Lose()
     {
-        MistakeSoundSour.Play();
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Debug.Log("Проигрыш");
     }
 }
