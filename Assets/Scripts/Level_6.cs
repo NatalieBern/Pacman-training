@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Level_3 : LevelManager
+public class Level_6 : LevelManager
 {
     protected override void Start()
     {
         //последовательность уовня
-        OrderLevel = new int[] { 1, 3, 2 };
+        OrderLevel = new int[] { 1, 3, 2, 3, 4, 1 };
 
         base.Start(); // вызываем базовый Start, чтобы OrderPlayer и Number настроились
     }
@@ -13,7 +13,7 @@ public class Level_3 : LevelManager
     protected override void Win()
     {
         base.Win();
-        Debug.Log("Level 3 Complete!");
+        Debug.Log("Level 6 Complete!");
         // тут можно загрузить Level_2 или показать экран победы
     }
 }
@@ -27,7 +27,7 @@ public class Level_3 : LevelManager
 //Blue
 //Pink
 
-    //1 - розовая точка
-    //2 - желтая точка
-    //3 - зеленая точка
-    //4 - голубая точка
+//1 - розовая точка
+//2 - желтая точка
+//3 - зеленая точка
+//4 - голубая точка
